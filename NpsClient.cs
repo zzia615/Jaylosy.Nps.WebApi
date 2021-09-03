@@ -1,5 +1,8 @@
 ﻿namespace Jaylosy.Nps.WebApi
 {
+    /// <summary>
+    /// NPS客户端
+    /// </summary>
     public class NpsClient
     {
         /// <summary>

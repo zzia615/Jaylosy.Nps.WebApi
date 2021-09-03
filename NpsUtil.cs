@@ -7,10 +7,18 @@ using System.IO;
 
 namespace Jaylosy.Nps.WebApi
 {
+    /// <summary>
+    /// NPS核心
+    /// </summary>
     public class NpsUtil
     {
         string hostAddress;
         string authKey;
+        /// <summary>
+        /// NPS核心
+        /// </summary>
+        /// <param name="hostAddress">服务网址</param>
+        /// <param name="authKey">服务AuthKey</param>
         public NpsUtil(string hostAddress,string authKey)
         {
             this.hostAddress = hostAddress;

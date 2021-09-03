@@ -1,5 +1,8 @@
 ﻿namespace Jaylosy.Nps.WebApi
 {
+    /// <summary>
+    /// NPS域名
+    /// </summary>
     public class NpsHost
     {
         /// <summary>

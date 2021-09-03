@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jaylosy.Nps.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Jaylosy.Nps.WebApi.NpsClient">
+            <summary>
+            NPS客户端
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.u">
+            <summary>
+            basic权限认证用户名
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.p">
+            <summary>
+            basic权限认证密码
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.limit">
+            <summary>
+            条数(分页显示的条数)
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.vkey">
+            <summary>
+            客户端验证密钥
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.config_conn_allow">
+            <summary>
+            是否允许客户端以配置文件模式连接 1允许 0不允许
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.compress">
+            <summary>
+            压缩1允许 0不允许
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.crypt">
+            <summary>
+            是否加密（1或者0）1允许 0不允许
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.rate_limit">
+            <summary>
+            带宽限制 单位KB/S 空则为不限制
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.flow_limit">
+            <summary>
+            流量限制 单位M 空则为不限制
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.max_conn">
+            <summary>
+            客户端最大连接数量 空则为不限制
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.max_tunnel">
+            <summary>
+            客户端最大隧道数量 空则为不限制
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsClient.id">
+            <summary>
+            要修改的客户端id
+            </summary>
+        </member>
+        <member name="T:Jaylosy.Nps.WebApi.NpsHost">
+            <summary>
+            NPS域名
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.host">
+            <summary>
+            域名
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.scheme">
+            <summary>
+            协议类型(三种 all http https)
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.location">
+            <summary>
+            url路由 空则为不限制
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.client_id">
+            <summary>
+            客户端id
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.target">
+            <summary>
+            内网目标(ip:端口)
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.header">
+            <summary>
+            request header 请求头
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.hostchange">
+            <summary>
+            request host 请求主机
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsHost.id">
+            <summary>
+            需要修改的域名解析id
+            </summary>
+        </member>
+        <member name="T:Jaylosy.Nps.WebApi.NpsTunnel">
+            <summary>
+            NPS隧道
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsTunnel.type">
+            <summary>
+            类型tcp udp httpProx socks5 secret p2p
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsTunnel.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsTunnel.port">
+            <summary>
+            服务端端口
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsTunnel.target">
+            <summary>
+            目标(ip:端口)
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsTunnel.client_id">
+            <summary>
+            客户端id
+            </summary>
+        </member>
+        <member name="P:Jaylosy.Nps.WebApi.NpsTunnel.id">
+            <summary>
+            隧道id
+            </summary>
+        </member>
+        <member name="T:Jaylosy.Nps.WebApi.NpsUtil">
+            <summary>
+            NPS核心
+            </summary>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.#ctor(System.String,System.String)">
+            <summary>
+            NPS核心
+            </summary>
+            <param name="hostAddress">服务网址</param>
+            <param name="authKey">服务AuthKey</param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetHostList(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取解析列表
+            </summary>
+            <param name="search">搜索</param>
+            <param name="page">分页(第几页)</param>
+            <param name="limit">条数(分页显示的条数)</param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.AddHost(Jaylosy.Nps.WebApi.NpsHost)">
+            <summary>
+            新增解析
+            </summary>
+            <param name="host"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.EditHost(Jaylosy.Nps.WebApi.NpsHost)">
+            <summary>
+            修改解析
+            </summary>
+            <param name="host"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.DeleteHost(System.Int32)">
+            <summary>
+            删除解析
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetTunnel(System.Int32)">
+            <summary>
+            获取单个隧道
+            </summary>
+            <param name="id">隧道ID</param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetTunnelList(System.Nullable{System.Int32},System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取隧道列表
+            </summary>
+            <param name="client_id">穿透隧道的客户端id</param>
+            <param name="type">类型tcp udp httpProx socks5 secret p2p</param>
+            <param name="search">搜索</param>
+            <param name="page">分页(第几页)</param>
+            <param name="limit">条数(分页显示的条数)</param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.AddTunnel(Jaylosy.Nps.WebApi.NpsTunnel)">
+            <summary>
+            新增隧道
+            </summary>
+            <param name="tunnel"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.EditTunnel(Jaylosy.Nps.WebApi.NpsTunnel)">
+            <summary>
+            编辑隧道
+            </summary>
+            <param name="tunnel"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.DeleteTunnel(System.Int32)">
+            <summary>
+            删除隧道
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.StopTunnel(System.Int32)">
+            <summary>
+            停止隧道
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetClientList(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取客户端列表
+            </summary>
+            <param name="search">搜索</param>
+            <param name="page">分页(第几页)</param>
+            <param name="limit">条数(分页显示的条数)</param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetClient(System.Int32)">
+            <summary>
+            获取单个客户端
+            </summary>
+            <param name="id">客户端id</param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.AddClient(Jaylosy.Nps.WebApi.NpsClient)">
+            <summary>
+            新增客户端
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.EditClient(Jaylosy.Nps.WebApi.NpsClient)">
+            <summary>
+            修改客户端
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.DeleteClient(System.Int32)">
+            <summary>
+            删除客户端
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetTime">
+            <summary>
+            获取系统时间
+            </summary>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.Post(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            POST请求
+            </summary>
+            <param name="url"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.Md5(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jaylosy.Nps.WebApi.NpsUtil.GetTimeStamp(System.Boolean)">
+            <summary>
+            取时间戳，高并发情况下会有重复。想要解决这问题请使用sleep线程睡眠1毫秒。
+            </summary>
+            <param name="AccurateToMilliseconds">精确到毫秒</param>
+            <returns>返回一个长整数时间戳</returns>
+        </member>
+    </members>
+</doc>

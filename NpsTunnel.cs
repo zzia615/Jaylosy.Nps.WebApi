@@ -1,5 +1,8 @@
 ﻿namespace Jaylosy.Nps.WebApi
 {
+    /// <summary>
+    /// NPS隧道
+    /// </summary>
     public class NpsTunnel
     {
         /// <summary>
