@@ -4,7 +4,9 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Net;
 using System.IO;
-
+#if NETCOREAPP||NETSTANDARD
+using System.Net.Http;
+#endif
 namespace Jaylosy.Nps.WebApi
 {
     /// <summary>
@@ -293,6 +295,12 @@ namespace Jaylosy.Nps.WebApi
             byte[] bytes = Encoding.UTF8.GetBytes(content.ToString());
             try
             {
+#if NETCOREAPP || NETSTANDARD
+                HttpClient client = new HttpClient();
+                StringContent postData = new StringContent(content.ToString(),Encoding.UTF8, "application/x-www-form-urlencoded");
+                var task = client.PostAsync(url, postData);
+                return task.Result.Content.ReadAsStringAsync().Result;
+#else
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
@@ -306,12 +314,7 @@ namespace Jaylosy.Nps.WebApi
                     StreamReader sr = new StreamReader(stream, Encoding.UTF8);
                     return sr.ReadToEnd();
                 }
-
-
-            }
-            catch (WebException)
-            {
-                throw;
+#endif
             }
             catch (Exception)
             {
